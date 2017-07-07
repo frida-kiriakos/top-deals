@@ -1,0 +1,31 @@
+%a.btn.btn-primary.pull-right{ href: '/' } Perform a Different Search
+- if @offers.nil?
+  %h1 No Deals were found
+- else
+  %h1= "#{@offers.count} Deals were found"
+  %table.table.table-striped.table-sm
+    %tbody
+      - @offers.each do |offer|
+        %tr
+          %td.span2
+            %img{ src: offer[:hotelInfo][:hotelImageUrl] }
+          %td.span6
+            %ul
+            %p
+              %a{ href: URI.unescape(offer[:hotelUrls][:hotelInfositeUrl]) }= offer[:hotelInfo][:hotelName]
+              %strong= "(#{offer[:hotelInfo][:hotelGuestReviewRating]}/5)"
+            %p= offer[:hotelInfo][:hotelLongDestination]
+            %p= offer[:hotelInfo][:hotelStreetAddress]
+            %p= offer[:hotelInfo][:description]
+          %td.span4
+            %h4= offer[:hotelInfo][:promotionDescription]
+            %p
+              = "from: #{offer[:offerDateRange][:travelStartDate].join('-')} "
+              = "to: #{offer[:offerDateRange][:travelEndDate].join('-')}"
+            %p
+              %del= offer[:hotelPricingInfo][:originalPricePerNight]
+              = " #{offer[:hotelPricingInfo][:averagePriceValue]} #{offer[:hotelPricingInfo][:currency]} avg/night"
+            - if !offer[:hotelUrgencyInfo].nil?
+              - status = offer[:hotelUrgencyInfo][:almostSoldStatus]
+              %strong= status == 'NO_DATA' ? '' : status.downcase
+
