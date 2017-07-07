@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.5'
+
 gem 'haml', require: 'haml'
 gem 'pry'
 gem 'rest-client'
