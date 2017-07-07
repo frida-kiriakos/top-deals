@@ -23,10 +23,9 @@ class TopDealsApp < Sinatra::Base
 
   helpers do
     def search_params(params)
-      {
-        scenario: 'deal-finder', page: 1, uid: 1, productType: 'Hotel',
-        destinationCity: params['destinationCity']
-      }
+      query_params = { scenario: 'deal-finder', page: 1, uid: 1, productType: 'Hotel' }
+      params.map { |key, value| query_params[key] = value }
+      query_params
     end
 
     def filter_and_sort_results(results)
