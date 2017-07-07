@@ -1,0 +1,12 @@
+%h1 Find Top Hotel Deals
+.col-md-4.col-md-offset-4.col-xs-3
+  %form{ action: '/search', method: :post }
+    .form-group
+      %label{ for: 'destinationCity' } Destination
+      %input{ type: :text, name: 'destinationCity', id: 'destinationCity', class: 'form-control' }
+
+    .form-group
+      %label{ for: 'minTripStartDate' } Destination
+      %input{ type: :text, name: 'minTripStartDate', id: 'minTripStartDate', class: 'form-control' }
+
+    %button.btn.btn-primary{ type: 'submit' } Search Deals
