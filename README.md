@@ -1,4 +1,4 @@
-# top-deals
+### top-deals
 
 - A Sinatra App for parsing hotel deals
 
@@ -6,7 +6,9 @@
 
 - Sinatra v2.0.0
 
-# Installation Instructions
+- [Access app on Heroku](https://evening-cliffs-85685.herokuapp.com/)
+
+### Installation Instructions
 
 ```sh
 $ sudo dnf install ruby rubygems
