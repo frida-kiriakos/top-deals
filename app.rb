@@ -7,13 +7,14 @@ require 'json'
 # this class initializes our application for displaying deals
 class TopDealsApp < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
+  API_URL = 'https://offersvc.expedia.com/offers/v2/getOffers'.freeze
 
   get '/' do
     haml :index
   end
 
   post '/search' do
-    response = RestClient.get('https://offersvc.expedia.com/offers/v2/getOffers',
+    response = RestClient.get(API_URL,
                               params: search_params(request.params))
     parsed_response = JSON.parse(response, symbolize_names: true)
     hotels = parsed_response[:offers][:Hotel]

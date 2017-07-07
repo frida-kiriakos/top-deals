@@ -12,7 +12,8 @@
           %td.span6
             %ul
             %p
-              %a{ href: URI.unescape(offer[:hotelUrls][:hotelInfositeUrl]) }= offer[:hotelInfo][:hotelName]
+              %a{ href: URI.unescape(offer[:hotelUrls][:hotelInfositeUrl]), target: '_blank' }
+                = offer[:hotelInfo][:hotelName]
               %strong= "(#{offer[:hotelInfo][:hotelGuestReviewRating]}/5)"
             %p= offer[:hotelInfo][:hotelLongDestination]
             %p= offer[:hotelInfo][:hotelStreetAddress]
