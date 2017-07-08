@@ -60,6 +60,7 @@ DEPENDENCIES
   minitest
   rack
   rack-test
+  rake
   rest-client
   rubocop
   sinatra

@@ -1,5 +1,1 @@
-require 'rake/testtask'
-
-Rake::TestTask.new do |t|
-  t.pattern = 'spec/*_spec.rb'
-end
+task(:default) { require_relative 'spec/app_spec.rb' }
