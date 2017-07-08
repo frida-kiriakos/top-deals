@@ -1,5 +1,7 @@
 ### top-deals
 
+[![Build Status](https://travis-ci.org/frida-kiriakos/top-deals.svg?branch=master)](https://travis-ci.org/frida-kiriakos/top-deals)
+
 - A Sinatra App for parsing hotel deals
 
 - ruby v2.2.5
