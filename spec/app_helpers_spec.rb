@@ -1,6 +1,5 @@
 require_relative 'spec_helper.rb'
 require_relative '../app_helpers'
-require 'pry'
 
 class AppHelpersTest < Minitest::Test
   include AppHelpers
