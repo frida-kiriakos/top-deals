@@ -35,5 +35,3 @@ class TopDealsApp < Sinatra::Base
     end
   end
 end
-
-TopDealsApp.run!
