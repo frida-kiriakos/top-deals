@@ -1,11 +1,12 @@
 require 'sinatra/base'
 require 'sinatra/twitter-bootstrap'
-require 'pry'
 require 'rest-client'
 require 'json'
 
 # this class initializes our application for displaying deals
 class TopDealsApp < Sinatra::Base
+  ENV['RACK_ENV'] ||= 'development'
+
   register Sinatra::Twitter::Bootstrap::Assets
   API_URL = 'https://offersvc.expedia.com/offers/v2/getOffers'.freeze
 
@@ -32,6 +33,10 @@ class TopDealsApp < Sinatra::Base
     def filter_and_sort_results(results)
       results.select  { |offer| offer[:hotelPricingInfo][:percentSavings] > 0 }
              .sort_by { |offer| offer[:hotelPricingInfo][:totalPriceValue] }
+    end
+
+    def decode_url(url)
+      URI.decode_www_form(url).flatten.first
     end
   end
 end

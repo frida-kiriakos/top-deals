@@ -15,5 +15,5 @@ $ sudo dnf install ruby rubygems
 $ gem install bundle
 $ cd top-deals
 $ bundle install
-$ ruby app.rb
+$ rackup config.ru
 ```
