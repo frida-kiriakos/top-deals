@@ -4,7 +4,7 @@ GEM
     ast (2.3.0)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
-    haml (5.0.1)
+    haml (5.2.0)
       temple (>= 0.8.0)
       tilt
     http-cookie (1.0.3)
@@ -45,8 +45,8 @@ GEM
       rack-protection (= 2.0.5)
       tilt (~> 2.0)
     sinatra-twitter-bootstrap (2.3.4)
-    temple (0.8.0)
-    tilt (2.0.9)
+    temple (0.8.2)
+    tilt (2.0.10)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.4)
